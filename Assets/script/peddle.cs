@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class peddle : MonoBehaviour {
 
-	Rigidbody2D rigidbody 
-	float speed = 5
+	Rigidbody2D rigidbody; 
+	float speed = 5;
 
 	void Start(){
-		rigidBody = GetComponent<Rigidbody2D>();
+		rigidbody = GetComponent<Rigidbody2D>();
 	}
 		
 	void Update () {
 
 		float x = Input.GetAxisRaw ("Horizontal");
 		x = x * speed;
-		rigidBody.velocity = new Vector2 (x,0);
+		rigidbody.velocity = new Vector2 (x,0);
 	}
 }
