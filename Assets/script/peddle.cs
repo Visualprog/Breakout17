@@ -7,7 +7,10 @@ public class peddle : MonoBehaviour {
 	Rigidbody2D rigidbody 
 	float speed = 5
 
-		 rigidBody = GetComponent<Rigidbody2D>();
+	void Start(){
+		rigidBody = GetComponent<Rigidbody2D>();
+	}
+		
 	void Update () {
 
 		float x = Input.GetAxisRaw ("Horizontal");
