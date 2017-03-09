@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ball : MonoBehaviour {
-	public  Vector2 startingVelocity = new Vector2 (5, -5);
+	public  Vector2 startingVelocity = new Vector2 (5, -10);
 	private Vector3 startingPosition;
 	public  GameObject gameOver;
 
