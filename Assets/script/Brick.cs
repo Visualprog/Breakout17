@@ -13,12 +13,14 @@ public class Brick : MonoBehaviour {
 	{
 		//health -= 1; is the same as health = health -1; 
 		health = health - 1; 
-		if (health == 0){
-			Break(	);
-		}
+		Debug.Log (health);
 
-	}
-	void Break(){
-		gameObject.SetActive (false);		
+			if (health == 0){
+			gameObject.SetActive (false);	
+			FindObjectOfType<ball> ().YouBrokeABrick ();
+		}
 	}
 }
+	
+
+	

@@ -5,7 +5,8 @@ using UnityEngine;
 public class ball : MonoBehaviour {
 	public  Vector2 startingVelocity = new Vector2 (5, -10);
 	private Vector3 startingPosition;
-	public  GameObject gameOver;
+	public  GameObject gameOverSign;
+	public  GameObject youwinSign;
 
 	int live = 4;
 
@@ -39,6 +40,16 @@ public class ball : MonoBehaviour {
 	}
 	void DoGameOver ()
 	{
-		gameOver.SetActive (true);
+		gameOverSign.SetActive (true);
+	}
+
+	public void YouBrokeABrick()
+	{
+		var bricksleft =FindObjectsOfType<Brick>().Length;
+		if(bricksleft == 0){
+			youwinSign.SetActive(true);
+		}
 	}
 }
+
+ 
