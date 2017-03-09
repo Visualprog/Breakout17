@@ -7,7 +7,7 @@ public class ball : MonoBehaviour {
 	private Vector3 startingPosition;
 	public  GameObject gameOver;
 
-	int live = 3;
+	int live = 4;
 
 	// Use this for initialization
 	void Start () {
