@@ -5,7 +5,7 @@ using UnityEngine;
 public class peddle : MonoBehaviour {
 
 	Rigidbody2D rigidbody; 
-	float speed = 5;
+	float speed = 7;
 
 	void Start(){
 		rigidbody = GetComponent<Rigidbody2D>();
