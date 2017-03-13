@@ -1,19 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ball : MonoBehaviour {
+    public class ball : MonoBehaviour {
 	public  Vector2 startingVelocity = new Vector2 (5, -10);
 	private Vector3 startingPosition;
 	public  GameObject gameOverSign;
 	public  GameObject youwinSign;
+	public  Text livesValue; 
+	public  Text pointsValue; 
 
-	int live = 4;
+	int lives = 3;
+	int points = 0;
 
 	// Use this for initialization
 	void Start () {
 		startingPosition = transform.position;
 		GetComponent<Rigidbody2D> ().velocity = startingVelocity;
+
 	}
 	
 	// Update is called once per frame
@@ -29,12 +34,13 @@ public class ball : MonoBehaviour {
 	void GetOut()
 	{
 		Debug.Log ("You  are out");
-		live = live - 1;
+		lives = lives - 1;
+		livesValue.text = lives.ToString ();
 
 		transform.position = startingPosition;
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 ();
 
-		if (live == 0) {
+		if (lives == 0) {
 			DoGameOver ();
 		}
 	}
@@ -45,6 +51,8 @@ public class ball : MonoBehaviour {
 
 	public void YouBrokeABrick()
 	{
+		points += 1; 
+		pointsValue.text = points.ToString ();
 		var bricksleft =FindObjectsOfType<Brick>().Length;
 		if(bricksleft == 0){
 			youwinSign.SetActive(true);

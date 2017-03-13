@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour {
 
-	int health = 3;
+	public int health = 3;
 	// Use this for initialization
 	void Start () {
 		
