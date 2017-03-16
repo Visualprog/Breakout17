@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour {
 
-	public int health = 3;
+	public int health = 6;
 	public int points = 1;
 	// Use this for initialization
 	void Start () {
@@ -15,8 +15,6 @@ public class Brick : MonoBehaviour {
 		//health -= 1; is the same as health = health -1; 
 		health = health - 1; 
 		Debug.Log (health);
-		Instantate (brickParticle, transform.position, Quaternion.identity);
-		ball.instance.DestroyBrick ();
 
 		GetComponent<SpriteRenderer> ().color = new Color (1,1,health * .2f);
 
