@@ -49,9 +49,9 @@ using UnityEngine.UI;
 		gameOverSign.SetActive (true);
 	}
 
-	public void YouBrokeABrick()
+	public void YouBrokeABrick(int worth)
 	{
-		points += 1; 
+		points += worth; 
 		pointsValue.text = points.ToString ();
 		var bricksleft =FindObjectsOfType<Brick>().Length;
 		if(bricksleft == 0){
